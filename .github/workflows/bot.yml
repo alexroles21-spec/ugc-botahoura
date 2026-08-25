@@ -3,7 +3,7 @@ name: Run UGC Outreach Bot 24/7
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 * * * *'
 
 jobs:
   run-bot:
@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: setup-python@v5
         with:
           python-version: '3.10'
 
@@ -25,4 +25,3 @@ jobs:
       - name: Run Bot Script
         run: |
           python bot.py
- 
